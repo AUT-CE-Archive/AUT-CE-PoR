@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="hw3_part3" type="control.py" name="control" output="screen"></node>
+    <node pkg="hw3_part3" type="monitor.py" name="monitor" output="screen"></node>
+    <include file="$(find hw3_part3)/launch/turtlebot3_big_wall.launch"></include>
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_gazebo_rviz.launch"></include>
+</launch>

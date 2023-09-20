@@ -1,0 +1,11 @@
+<launch>
+    <node pkg="part1" type="mission.py" name="mission" output="screen"></node>
+    <node pkg="part1" type="control.py" name="control" output="screen"><param name="linear_speed" value="$(arg linear_speed)" /></node>
+    <node pkg="part1" type="monitor.py" name="monitor" output="screen"> /node>
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch">
+        <arg name="x_pos" value="0"/>
+        <arg name="y_pos" value="0"/>
+        <arg name="z_pos" value="0.0"/>
+    </include>
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_gazebo_rviz.launch"/>
+</launch>
